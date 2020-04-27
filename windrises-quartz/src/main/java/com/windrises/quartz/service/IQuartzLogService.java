@@ -7,7 +7,7 @@ import com.windrises.core.entity.po.QuartzLog;
  * @version Revision 1.0.0
  * @date 2020/4/27 11:06
  */
-public interface QuartzLogService {
+public interface IQuartzLogService {
 
 
     int deleteByPrimaryKey(Integer id);

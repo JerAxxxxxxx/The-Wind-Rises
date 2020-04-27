@@ -16,11 +16,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class QuartzJob {
-    /**
-     * 主键
-     */
-    private Integer id;
+public class QuartzJob extends BasePo {
 
     /**
      * 任务名称

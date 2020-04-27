@@ -1,12 +1,12 @@
 package com.windrises.quartz.service.impl;
 
+import com.windrises.quartz.service.IQuartzLogService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
 import com.windrises.core.mapper.QuartzLogMapper;
 import com.windrises.core.entity.po.QuartzLog;
-import com.windrises.quartz.service.QuartzLogService;
 
 /**
  * @author JerAxxxxx
@@ -14,7 +14,7 @@ import com.windrises.quartz.service.QuartzLogService;
  * @date 2020/4/27 11:06
  */
 @Service
-public class QuartzLogServiceImpl implements QuartzLogService {
+public class QuartzLogServiceImpl implements IQuartzLogService {
 
     @Resource
     private QuartzLogMapper quartzLogMapper;

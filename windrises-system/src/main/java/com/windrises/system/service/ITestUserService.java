@@ -7,7 +7,7 @@ import com.windrises.core.entity.po.TestUser;
  * @version Revision 1.0.0
  * @date 2020/4/27 10:41
  */
-public interface TestUserService {
+public interface ITestUserService {
 
 
     int deleteByPrimaryKey(String id);

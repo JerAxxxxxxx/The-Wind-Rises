@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * 自定义线程名称
  *
- * @author liuhaozhen
+ * @author JerAxxxxx
  * @version Revision 1.0.0
  * @date 2020/4/27 11:26
  */

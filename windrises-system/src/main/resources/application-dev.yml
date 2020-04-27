@@ -1,6 +1,6 @@
 #端口
 server:
-  port: 18081
+  port: 18083
 
 #数据库连接信息
 spring:
@@ -9,3 +9,4 @@ spring:
     username: ENC(4+1kex/fUUbN8wmc5rpnIg==)
     password: ENC(IThjaANNwH1l8WbZ3cp1oA==)
     driver-class-name: com.mysql.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource

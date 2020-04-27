@@ -1,12 +1,12 @@
 package com.windrises.system.service.impl;
 
+import com.windrises.system.service.ITestUserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
 import com.windrises.core.mapper.TestUserMapper;
 import com.windrises.core.entity.po.TestUser;
-import com.windrises.system.service.TestUserService;
 
 /**
  * @author JerAxxxxx
@@ -14,7 +14,7 @@ import com.windrises.system.service.TestUserService;
  * @date 2020/4/27 10:41
  */
 @Service
-public class TestUserServiceImpl implements TestUserService {
+public class TestUserServiceImpl implements ITestUserService {
 
     @Resource
     private TestUserMapper testUserMapper;

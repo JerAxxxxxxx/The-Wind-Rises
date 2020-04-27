@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 用于获取自定义线程池
  *
- * @author liuhaozhen
+ * @author JerAxxxxx
  * @version Revision 1.0.0
  * @date 2020/4/27 11:27
  */

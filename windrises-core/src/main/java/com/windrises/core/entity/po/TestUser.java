@@ -14,9 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class TestUser {
-    private String id;
-
+public class TestUser extends BasePo {
     private String name;
 
     private String password;

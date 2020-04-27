@@ -7,19 +7,21 @@ import com.windrises.core.entity.po.QuartzJob;
  * @version Revision 1.0.0
  * @date 2020/4/27 10:57
  */
-public interface QuartzJobService {
+public interface IQuartzJobService {
 
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(QuartzJob record);
-
+    /**
+     * 添加
+     *
+     * @param record
+     * @return
+     */
     int insertSelective(QuartzJob record);
 
     QuartzJob selectByPrimaryKey(Integer id);
 
     int updateByPrimaryKeySelective(QuartzJob record);
-
-    int updateByPrimaryKey(QuartzJob record);
 
 }
