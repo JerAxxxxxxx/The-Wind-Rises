@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.windrises.core.mapper.QuartzLogMapper">
+  <resultMap id="BaseResultMap" type="com.windrises.core.entity.po.QuartzLog">
+    <!--@mbg.generated-->
+    <!--@Table quartz_log-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="job_name" jdbcType="VARCHAR" property="jobName" />
+    <result column="bean_name" jdbcType="VARCHAR" property="beanName" />
+    <result column="method_name" jdbcType="VARCHAR" property="methodName" />
+    <result column="params" jdbcType="VARCHAR" property="params" />
+    <result column="cron_expression" jdbcType="VARCHAR" property="cronExpression" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="exception_detail" jdbcType="VARCHAR" property="exceptionDetail" />
+    <result column="elapsed_time" jdbcType="INTEGER" property="elapsedTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, job_name, bean_name, method_name, params, cron_expression, `status`, exception_detail, 
+    elapsed_time, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from quartz_log
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from quartz_log
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.windrises.core.entity.po.QuartzLog" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into quartz_log (job_name, bean_name, method_name, 
+      params, cron_expression, `status`, 
+      exception_detail, elapsed_time, create_time
+      )
+    values (#{jobName,jdbcType=VARCHAR}, #{beanName,jdbcType=VARCHAR}, #{methodName,jdbcType=VARCHAR}, 
+      #{params,jdbcType=VARCHAR}, #{cronExpression,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{exceptionDetail,jdbcType=VARCHAR}, #{elapsedTime,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.windrises.core.entity.po.QuartzLog" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into quartz_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="jobName != null">
+        job_name,
+      </if>
+      <if test="beanName != null">
+        bean_name,
+      </if>
+      <if test="methodName != null">
+        method_name,
+      </if>
+      <if test="params != null">
+        params,
+      </if>
+      <if test="cronExpression != null">
+        cron_expression,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="exceptionDetail != null">
+        exception_detail,
+      </if>
+      <if test="elapsedTime != null">
+        elapsed_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="jobName != null">
+        #{jobName,jdbcType=VARCHAR},
+      </if>
+      <if test="beanName != null">
+        #{beanName,jdbcType=VARCHAR},
+      </if>
+      <if test="methodName != null">
+        #{methodName,jdbcType=VARCHAR},
+      </if>
+      <if test="params != null">
+        #{params,jdbcType=VARCHAR},
+      </if>
+      <if test="cronExpression != null">
+        #{cronExpression,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="exceptionDetail != null">
+        #{exceptionDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="elapsedTime != null">
+        #{elapsedTime,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.windrises.core.entity.po.QuartzLog">
+    <!--@mbg.generated-->
+    update quartz_log
+    <set>
+      <if test="jobName != null">
+        job_name = #{jobName,jdbcType=VARCHAR},
+      </if>
+      <if test="beanName != null">
+        bean_name = #{beanName,jdbcType=VARCHAR},
+      </if>
+      <if test="methodName != null">
+        method_name = #{methodName,jdbcType=VARCHAR},
+      </if>
+      <if test="params != null">
+        params = #{params,jdbcType=VARCHAR},
+      </if>
+      <if test="cronExpression != null">
+        cron_expression = #{cronExpression,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="exceptionDetail != null">
+        exception_detail = #{exceptionDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="elapsedTime != null">
+        elapsed_time = #{elapsedTime,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.windrises.core.entity.po.QuartzLog">
+    <!--@mbg.generated-->
+    update quartz_log
+    set job_name = #{jobName,jdbcType=VARCHAR},
+      bean_name = #{beanName,jdbcType=VARCHAR},
+      method_name = #{methodName,jdbcType=VARCHAR},
+      params = #{params,jdbcType=VARCHAR},
+      cron_expression = #{cronExpression,jdbcType=VARCHAR},
+      `status` = #{status,jdbcType=VARCHAR},
+      exception_detail = #{exceptionDetail,jdbcType=VARCHAR},
+      elapsed_time = #{elapsedTime,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

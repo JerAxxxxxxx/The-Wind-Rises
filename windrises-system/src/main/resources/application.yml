@@ -1,0 +1,13 @@
+# 使用的配置文件
+spring:
+  profiles:
+    active: dev
+
+# mybatis配置
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+
+#加密
+jasypt:
+  encryptor:
+    bean: encryptorBean

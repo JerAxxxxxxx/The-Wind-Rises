@@ -1,0 +1,11 @@
+#端口
+server:
+  port: 18081
+
+#数据库连接信息
+spring:
+  datasource:
+    url: jdbc:mysql://47.106.112.192:6607/test_db1?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: ENC(4+1kex/fUUbN8wmc5rpnIg==)
+    password: ENC(IThjaANNwH1l8WbZ3cp1oA==)
+    driver-class-name: com.mysql.jdbc.Driver
