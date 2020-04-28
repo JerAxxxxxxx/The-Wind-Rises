@@ -28,9 +28,7 @@ public class QuartzJobServiceImpl implements IQuartzJobService {
 
     @Override
     public int insertSelective(QuartzJob record) {
-        record.setCreateTime(new Date());
-        record.setUpdateTime(new Date());
-        record.setStatus("1");
+        record.setCreateTime(new Date()).setUpdateTime(new Date()).setStatus("1");
         return quartzJobMapper.insertSelective(record);
     }
 

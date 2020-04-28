@@ -3,6 +3,7 @@ package com.windrises.quartz.entity.form;
 import com.windrises.core.entity.form.BaseForm;
 import com.windrises.core.entity.po.QuartzJob;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import javax.validation.constraints.NotBlank;
 
@@ -12,6 +13,7 @@ import javax.validation.constraints.NotBlank;
  * @date 2020/4/27 14:34
  */
 @Data
+@Accessors(chain = true)
 public class QuartzJobForm extends BaseForm<QuartzJob> {
 
     /**

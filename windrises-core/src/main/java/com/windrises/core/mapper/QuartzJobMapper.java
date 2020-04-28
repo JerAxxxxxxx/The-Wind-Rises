@@ -10,15 +10,37 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface QuartzJobMapper {
+    /**
+     * 数据删除
+     *
+     * @param id
+     * @return
+     */
     int deleteByPrimaryKey(Integer id);
 
-    int insert(QuartzJob record);
 
+    /**
+     * 新增
+     *
+     * @param record
+     * @return
+     */
     int insertSelective(QuartzJob record);
 
+    /**
+     * 根据主键查询
+     *
+     * @param id
+     * @return
+     */
     QuartzJob selectByPrimaryKey(Integer id);
 
+    /**
+     * 更新
+     *
+     * @param record
+     * @return
+     */
     int updateByPrimaryKeySelective(QuartzJob record);
 
-    int updateByPrimaryKey(QuartzJob record);
 }

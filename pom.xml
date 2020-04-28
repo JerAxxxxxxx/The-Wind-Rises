@@ -29,6 +29,8 @@
 
         <mybatis-spring-boot-starter>2.1.1</mybatis-spring-boot-starter>
         <mysql-connector.version>5.1.47</mysql-connector.version>
+
+        <jedis.version>3.2.0</jedis.version>
     </properties>
 
     <dependencyManagement>
@@ -96,6 +98,14 @@
                 <artifactId>jasypt-spring-boot-starter</artifactId>
                 <version>${jasypt.version}</version>
             </dependency>
+
+            <!-- jedis -->
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.version}</version>
+            </dependency>
+
 
             <!--获取浏览器信息-->
             <dependency>

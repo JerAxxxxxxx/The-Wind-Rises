@@ -30,4 +30,11 @@ public class QuartzJobController {
         quartzJobService.insertSelective(quartzJob);
         return Result.success();
     }
+
+    @PostMapping("/update")
+    public Result update(@Valid @RequestBody QuartzJobForm quartzJobForm) {
+        QuartzJob quartzJob = quartzJobForm.toPo(QuartzJob.class);
+        quartzJobService.insertSelective(quartzJob);
+        return Result.success();
+    }
 }
