@@ -6,7 +6,7 @@
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="job_name" jdbcType="VARCHAR" property="jobName"/>
         <result column="bean_name" jdbcType="VARCHAR" property="beanName"/>
-        <result column="method_name" jdbcType="VARCHAR" property="methodName">
+        <result column="method_name" jdbcType="VARCHAR" property="methodName"/>
         <result column="params" jdbcType="VARCHAR" property="params"/>
         <result column="cron_expression" jdbcType="VARCHAR" property="cronExpression"/>
         <result column="status" jdbcType="VARCHAR" property="status"/>
@@ -125,6 +125,6 @@
         where id = #{id,jdbcType=INTEGER}
     </update>
     <select id="findByPause" resultMap="BaseResultMap">
-        SELECT * FROM quartz_job WHERE STATUS = #{status,jdbcType=VARCHAR};
+        SELECT * FROM quartz_job WHERE STATUS = #{status,jdbcType=VARCHAR}
     </select>
 </mapper>

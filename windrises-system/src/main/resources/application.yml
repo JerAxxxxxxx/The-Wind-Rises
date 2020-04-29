@@ -48,3 +48,8 @@ jedisCluster:
   soTimeOut: 1000
   maxAttempt: 5
   password:
+
+#zk
+zookeeper:
+  connectString: 106.12.150.214:2181
+  sessionTimeout: 50000
