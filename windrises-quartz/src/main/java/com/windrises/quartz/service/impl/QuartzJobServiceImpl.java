@@ -1,6 +1,9 @@
 package com.windrises.quartz.service.impl;
 
+import com.windrises.core.exception.BadRequestException;
 import com.windrises.quartz.service.IQuartzJobService;
+import com.windrises.quartz.utils.QuartzManage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -9,6 +12,9 @@ import com.windrises.core.mapper.QuartzJobMapper;
 import com.windrises.core.entity.po.QuartzJob;
 
 import java.util.Date;
+
+import static com.windrises.core.contants.JobConstant.PAUSE;
+import static com.windrises.core.contants.JobConstant.START;
 
 /**
  * @author JerAxxxxx
@@ -20,6 +26,9 @@ public class QuartzJobServiceImpl implements IQuartzJobService {
 
     @Resource
     private QuartzJobMapper quartzJobMapper;
+
+    @Autowired
+    private QuartzManage quartzManage;
 
     @Override
     public int deleteByPrimaryKey(Integer id) {
@@ -40,5 +49,20 @@ public class QuartzJobServiceImpl implements IQuartzJobService {
     @Override
     public int updateByPrimaryKeySelective(QuartzJob record) {
         return quartzJobMapper.updateByPrimaryKeySelective(record);
+    }
+
+    @Override
+    public void updateStatus(QuartzJob quartzJob) {
+        if (quartzJob.getId().equals(1L)) {
+            throw new BadRequestException("该任务不可操作");
+        }
+        if (PAUSE.equals(quartzJob.getStatus())) {
+            quartzManage.resumeJob(quartzJob);
+            quartzJob.setStatus(START);
+        } else {
+            quartzManage.pauseJob(quartzJob);
+            quartzJob.setStatus(PAUSE);
+        }
+        quartzJobMapper.updateByPrimaryKeySelective(quartzJob);
     }
 }

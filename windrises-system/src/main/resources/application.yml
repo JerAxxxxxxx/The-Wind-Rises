@@ -5,10 +5,14 @@ spring:
   redis:
     jedis:
       pool:
-        max-active:
-        max-idle:
-        max-wait:
-        min-idle:
+        # 连接池最大连接数（使用负值表示没有限制）
+        max-active: 8
+        # 连接池中的最大空闲连接
+        max-idle: 8
+        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: -1
+        # 连接池中的最小空闲连接
+        min-idle: 0
         time-between-eviction-runs:
 
 # mybatis配置
@@ -43,4 +47,4 @@ jedisCluster:
   connectionTimeOut: 1000
   soTimeOut: 1000
   maxAttempt: 5
-  password: ysg0x1joart2
+  password:

@@ -1,14 +1,13 @@
 package com.windrises.logging.service;
 
 import com.windrises.core.entity.po.Log;
-    /**
- * 
- * @author liuhaozhen
+
+/**
+ * @author JerAxxxxx
  * @version Revision 1.0.0
- * @date  2020/4/27 15:58
- *
+ * @date 2020/4/27 15:58
  */
-public interface LogService{
+public interface LogService {
 
 
     int deleteByPrimaryKey(Integer id);

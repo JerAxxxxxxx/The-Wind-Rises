@@ -56,7 +56,7 @@ public class QuartzLog extends BasePo {
     /**
      * 耗时（毫秒）
      */
-    private Integer elapsedTime;
+    private Long elapsedTime;
 
     /**
      * 创建日期

@@ -24,4 +24,7 @@ public interface IQuartzJobService {
 
     int updateByPrimaryKeySelective(QuartzJob record);
 
+
+    void updateStatus(QuartzJob record);
+
 }

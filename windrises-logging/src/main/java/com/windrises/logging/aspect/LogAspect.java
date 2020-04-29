@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author liuhaozhen
+ * @author JerAxxxxx
  * @version Revision 1.0.0
  * @date 2020/4/27 15:44
  */
@@ -56,11 +56,11 @@ public class LogAspect {
     }
 
 
-    public String getUsername() {
-        try {
-            return SecurityUtils.getUsername();
-        } catch (Exception e) {
-            return "";
-        }
-    }
+//    public String getUsername() {
+//        try {
+//            return SecurityUtils.getUsername();
+//        } catch (Exception e) {
+//            return "";
+//        }
+//    }
 }

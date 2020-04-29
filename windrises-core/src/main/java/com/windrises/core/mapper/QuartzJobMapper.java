@@ -2,6 +2,9 @@ package com.windrises.core.mapper;
 
 import com.windrises.core.entity.po.QuartzJob;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * @author JerAxxxxx
@@ -43,4 +46,12 @@ public interface QuartzJobMapper {
      */
     int updateByPrimaryKeySelective(QuartzJob record);
 
+
+    /**
+     * 根据状态查询符合的job
+     *
+     * @param status 状态
+     * @return
+     */
+    List<QuartzJob> findByPause(@Param("status") String status);
 }

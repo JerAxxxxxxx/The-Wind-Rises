@@ -20,6 +20,8 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class QuartzJob extends BasePo {
 
+    public static final String JOB_KEY = "JOB_KEY";
+
     /**
      * 任务名称
      */
@@ -29,6 +31,11 @@ public class QuartzJob extends BasePo {
      * 实例名
      */
     private String beanName;
+
+    /**
+     * 方法名
+     */
+    private String methodName;
 
     /**
      * 参数
