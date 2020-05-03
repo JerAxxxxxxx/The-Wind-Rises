@@ -132,11 +132,30 @@
             </dependency>
 
             <!-- Apache Curator是Apache的开源项目，封装了zookeeper自带的客户端 -->
+            <!--基础框架 -->
             <dependency>
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-framework</artifactId>
                 <version>${curator.version}</version>
             </dependency>
+            <!--功能 jar 分布式锁、队列等 -->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+            <!--客户端重试策略-->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-client</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-x-discovery</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+            <!-- Curator end -->
 
         </dependencies>
     </dependencyManagement>

@@ -11,10 +11,13 @@ import java.io.IOException;
 import java.util.List;
 
 /**
+ * 基于zk原生api的链接工具
+ *
  * @author JerAxxxxx
  * @version Revision 1.0.0
  * @date 2020/4/29 16:12
  */
+@Deprecated
 @Slf4j
 @Component
 public class ZookeeperUtil {
