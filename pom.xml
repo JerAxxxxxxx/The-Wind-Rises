@@ -18,8 +18,10 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
 
         <lombok.verison>1.18.12</lombok.verison>
@@ -31,6 +33,8 @@
         <mysql-connector.version>5.1.47</mysql-connector.version>
 
         <jedis.version>3.2.0</jedis.version>
+
+        <curator.version>4.3.0</curator.version>
     </properties>
 
     <dependencyManagement>
@@ -119,12 +123,21 @@
                 <artifactId>ip2region</artifactId>
                 <version>1.7.2</version>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->
+
+            <!-- zookeeper官方的链接工具 -->
             <dependency>
                 <groupId>org.apache.zookeeper</groupId>
                 <artifactId>zookeeper</artifactId>
                 <version>3.6.0</version>
             </dependency>
+
+            <!-- Apache Curator是Apache的开源项目，封装了zookeeper自带的客户端 -->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -134,7 +147,15 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
-
 </project>
