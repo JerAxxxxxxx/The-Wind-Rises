@@ -27,6 +27,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public Result throwable(Throwable throwable) {
         log.error(throwable.getMessage());
+        throwable.printStackTrace();
         return Result.fail();
     }
 }

@@ -50,6 +50,14 @@ jedisCluster:
   password:
 
 #zk
-zookeeper:
+curator:
+  #重试次数
+  retryCount: 5
+  #重试间隔时间
+  elapsedTimeMs: 5000
+  #zookeeper 地址
   connectString: 106.12.150.214:2181
-  sessionTimeout: 50000
+  #session超时时间
+  sessionTimeoutMs: 60000
+  # 连接超时时间
+  connectionTimeoutMs: 5000

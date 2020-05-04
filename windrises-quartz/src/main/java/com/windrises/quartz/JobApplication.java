@@ -22,8 +22,8 @@ public class JobApplication {
         SpringApplication.run(JobApplication.class);
     }
 
-    @Bean
-    public SpringContextHolder springContextHolder() {
-        return new SpringContextHolder();
-    }
+//    @Bean
+//    public SpringContextHolder springContextHolder() {
+//        return new SpringContextHolder();
+//    }
 }

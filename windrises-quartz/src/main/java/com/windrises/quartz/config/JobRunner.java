@@ -35,8 +35,8 @@ public class JobRunner implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments applicationArguments) {
         System.out.println("--------------------注入定时任务---------------------");
-        List<QuartzJob> quartzJobs = quartzJobMapper.findByPause(START);
-        quartzJobs.forEach(quartzManage::addJob);
+        //List<QuartzJob> quartzJobs = quartzJobMapper.findByPause(START);
+        //quartzJobs.forEach(quartzManage::addJob);
         System.out.println("--------------------定时任务注入完成---------------------");
     }
 }

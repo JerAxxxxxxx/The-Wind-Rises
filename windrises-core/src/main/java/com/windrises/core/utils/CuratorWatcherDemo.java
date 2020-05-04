@@ -61,7 +61,6 @@ public class CuratorWatcherDemo {
         };
         pathChildrenCache.getListenable().addListener(listener);
         pathChildrenCache.start(PathChildrenCache.StartMode.POST_INITIALIZED_EVENT);
-        ;
     }
 
     /**
