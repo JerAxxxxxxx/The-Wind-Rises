@@ -3,6 +3,7 @@ package com.windrises.core.utils;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.CuratorFramework;
+import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.data.Stat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -37,6 +38,18 @@ public class ZookeeperUtil {
      */
     public static void create(String path, String data) throws Exception {
         client.create().creatingParentsIfNeeded().forPath(path, data.getBytes());
+    }
+
+    /**
+     * 在path路径下新增临时节点及数据
+     * 当客户端断开连接时，znode将被删除。
+     *
+     * @param path
+     * @param data
+     * @throws Exception
+     */
+    public static void createTemporaryNode(String path, String data) throws Exception {
+        client.create().creatingParentsIfNeeded().withMode(CreateMode.EPHEMERAL).forPath(path, data.getBytes());
     }
 
     /**

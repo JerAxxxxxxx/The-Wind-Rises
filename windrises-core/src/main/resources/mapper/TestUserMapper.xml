@@ -88,4 +88,7 @@
         `role` = #{role,jdbcType=VARCHAR}
         where id = #{id,jdbcType=VARCHAR}
     </update>
+    <select id="getAll" resultMap="BaseResultMap">
+        select * from test_user
+    </select>
 </mapper>

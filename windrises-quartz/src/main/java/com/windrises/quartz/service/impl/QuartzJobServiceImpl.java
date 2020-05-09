@@ -1,8 +1,10 @@
 package com.windrises.quartz.service.impl;
 
 import com.windrises.core.exception.BadRequestException;
+import com.windrises.core.exception.BaseException;
 import com.windrises.quartz.service.IQuartzJobService;
 import com.windrises.quartz.utils.QuartzManage;
+import org.quartz.CronExpression;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,7 @@ import java.util.Date;
 
 import static com.windrises.core.contants.JobConstant.PAUSE;
 import static com.windrises.core.contants.JobConstant.START;
+import static com.windrises.core.exception.SystemErrorType.ARGUMENT_NOT_VALID;
 
 /**
  * @author JerAxxxxx
@@ -37,6 +40,9 @@ public class QuartzJobServiceImpl implements IQuartzJobService {
 
     @Override
     public int insertSelective(QuartzJob record) {
+        if (!CronExpression.isValidExpression(record.getCronExpression())) {
+            throw new BaseException(ARGUMENT_NOT_VALID, ARGUMENT_NOT_VALID.getMessage() + ",cron表达式格式错误");
+        }
         record.setCreateTime(new Date()).setUpdateTime(new Date()).setStatus("1");
         return quartzJobMapper.insertSelective(record);
     }
@@ -48,6 +54,9 @@ public class QuartzJobServiceImpl implements IQuartzJobService {
 
     @Override
     public int updateByPrimaryKeySelective(QuartzJob record) {
+        if (!CronExpression.isValidExpression(record.getCronExpression())) {
+            throw new BaseException(ARGUMENT_NOT_VALID, ARGUMENT_NOT_VALID.getMessage() + ",cron表达式格式错误");
+        }
         return quartzJobMapper.updateByPrimaryKeySelective(record);
     }
 

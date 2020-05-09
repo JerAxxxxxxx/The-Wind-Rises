@@ -6,6 +6,7 @@ import com.windrises.core.exception.SystemErrorType;
 import lombok.Getter;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 
 /**
@@ -24,11 +25,11 @@ public class Result<T> {
 
     private String code;
     private String message;
-    private Instant time;
+    private LocalDateTime time;
     private T data;
 
     public Result() {
-        this.time = ZonedDateTime.now().toInstant();
+        this.time = LocalDateTime.now();
     }
 
     /**
@@ -39,7 +40,7 @@ public class Result<T> {
     public Result(ErrorType errorType) {
         this.code = errorType.getCode();
         this.message = errorType.getMessage();
-        this.time = ZonedDateTime.now().toInstant();
+        this.time = LocalDateTime.now();
     }
 
 
@@ -65,7 +66,7 @@ public class Result<T> {
         this.code = code;
         this.message = message;
         this.data = data;
-        this.time = ZonedDateTime.now().toInstant();
+        this.time = LocalDateTime.now();
     }
 
     /**

@@ -7,9 +7,7 @@ import com.windrises.core.utils.ZookeeperUtil;
 import com.windrises.quartz.entity.form.QuartzJobForm;
 import com.windrises.quartz.service.IQuartzJobService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.curator.framework.CuratorFramework;
 import org.apache.zookeeper.data.Stat;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -3,6 +3,8 @@ package com.windrises.core.mapper;
 import com.windrises.core.entity.po.TestUser;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * @author JerAxxxxx
  * @version Revision 1.0.0
@@ -21,4 +23,6 @@ public interface TestUserMapper {
     int updateByPrimaryKeySelective(TestUser record);
 
     int updateByPrimaryKey(TestUser record);
+
+    List<TestUser> getAll();
 }

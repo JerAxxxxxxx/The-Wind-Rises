@@ -8,6 +8,11 @@ import javax.annotation.Resource;
 import com.windrises.core.mapper.TestUserMapper;
 import com.windrises.core.entity.po.TestUser;
 
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
 /**
  * @author JerAxxxxx
  * @version Revision 1.0.0
@@ -47,6 +52,19 @@ public class TestUserServiceImpl implements ITestUserService {
     @Override
     public int updateByPrimaryKey(TestUser record) {
         return testUserMapper.updateByPrimaryKey(record);
+    }
+
+    @Override
+    public List<TestUser> getAll() {
+        String test = testUserMapper.getAll().stream()
+                .filter(testUser -> "123".equals(testUser.getRole()))
+                .map(TestUser::getRole)
+                .collect(Collectors.toList())
+                .stream()
+                .reduce((a, b) -> a + "???" + b)
+                .orElse("无数据");
+        System.out.println(test);
+        return testUserMapper.getAll();
     }
 
 }

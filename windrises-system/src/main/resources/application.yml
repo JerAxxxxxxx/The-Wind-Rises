@@ -35,29 +35,3 @@ task:
     keep-alive-seconds: 60
     # 队列容量
     queue-capacity: 50
-
-#redis
-jedisCluster:
-  nodes: 106.12.150.214
-  poolConfig:
-    max-Total: 20
-    max-idle: 8
-    min-idle: 1
-    max-wait-millis: 1500
-  connectionTimeOut: 1000
-  soTimeOut: 1000
-  maxAttempt: 5
-  password:
-
-#zk
-curator:
-  #重试次数
-  retryCount: 5
-  #重试间隔时间
-  elapsedTimeMs: 5000
-  #zookeeper 地址
-  connectString: 106.12.150.214:2181
-  #session超时时间
-  sessionTimeoutMs: 60000
-  # 连接超时时间
-  connectionTimeoutMs: 5000

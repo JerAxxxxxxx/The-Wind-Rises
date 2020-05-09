@@ -2,6 +2,8 @@ package com.windrises.system.service;
 
 import com.windrises.core.entity.po.TestUser;
 
+import java.util.List;
+
 /**
  * @author JerAxxxxx
  * @version Revision 1.0.0
@@ -21,5 +23,7 @@ public interface ITestUserService {
     int updateByPrimaryKeySelective(TestUser record);
 
     int updateByPrimaryKey(TestUser record);
+
+    List<TestUser> getAll();
 
 }

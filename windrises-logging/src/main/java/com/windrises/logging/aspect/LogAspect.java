@@ -25,8 +25,6 @@ public class LogAspect {
 
     private final LogService logService;
 
-    private long currentTime = 0L;
-
     public LogAspect(LogService logService) {
         this.logService = logService;
     }
@@ -47,7 +45,7 @@ public class LogAspect {
     @Around("logPointcut()")
     public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
         Object result;
-        currentTime = System.currentTimeMillis();
+        long currentTime = System.currentTimeMillis();
         result = joinPoint.proceed();
         Log log = new Log("INFO", System.currentTimeMillis() - currentTime);
         HttpServletRequest request = RequestHolder.getHttpServletRequest();
