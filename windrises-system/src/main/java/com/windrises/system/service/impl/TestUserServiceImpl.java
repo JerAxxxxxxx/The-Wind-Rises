@@ -1,6 +1,9 @@
 package com.windrises.system.service.impl;
 
 import com.windrises.system.service.ITestUserService;
+import com.windrises.system.test.AsyncTest;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -18,11 +21,18 @@ import java.util.stream.Collectors;
  * @version Revision 1.0.0
  * @date 2020/4/27 10:41
  */
+@Slf4j
 @Service
 public class TestUserServiceImpl implements ITestUserService {
 
-    @Resource
-    private TestUserMapper testUserMapper;
+    private final TestUserMapper testUserMapper;
+
+    private final AsyncTest test;
+
+    public TestUserServiceImpl(AsyncTest test, TestUserMapper testUserMapper) {
+        this.test = test;
+        this.testUserMapper = testUserMapper;
+    }
 
     @Override
     public int deleteByPrimaryKey(String id) {
@@ -56,6 +66,8 @@ public class TestUserServiceImpl implements ITestUserService {
 
     @Override
     public List<TestUser> getAll() {
+        //test();
+        test.test();
         String test = testUserMapper.getAll().stream()
                 .filter(testUser -> "123".equals(testUser.getRole()))
                 .map(TestUser::getRole)
@@ -63,8 +75,7 @@ public class TestUserServiceImpl implements ITestUserService {
                 .stream()
                 .reduce((a, b) -> a + "???" + b)
                 .orElse("无数据");
-        System.out.println(test);
+        log.info(test);
         return testUserMapper.getAll();
     }
-
 }

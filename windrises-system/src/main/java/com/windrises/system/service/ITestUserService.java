@@ -25,5 +25,4 @@ public interface ITestUserService {
     int updateByPrimaryKey(TestUser record);
 
     List<TestUser> getAll();
-
 }

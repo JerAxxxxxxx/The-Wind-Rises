@@ -4,6 +4,7 @@ import com.windrises.core.exception.BadRequestException;
 import com.windrises.core.exception.BaseException;
 import com.windrises.quartz.service.IQuartzJobService;
 import com.windrises.quartz.utils.QuartzManage;
+import lombok.RequiredArgsConstructor;
 import org.quartz.CronExpression;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,7 @@ import static com.windrises.core.exception.SystemErrorType.ARGUMENT_NOT_VALID;
  * @date 2020/4/27 10:57
  */
 @Service
+//@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class QuartzJobServiceImpl implements IQuartzJobService {
 
     @Resource
@@ -32,6 +34,7 @@ public class QuartzJobServiceImpl implements IQuartzJobService {
 
     @Autowired
     private QuartzManage quartzManage;
+
 
     @Override
     public int deleteByPrimaryKey(Integer id) {

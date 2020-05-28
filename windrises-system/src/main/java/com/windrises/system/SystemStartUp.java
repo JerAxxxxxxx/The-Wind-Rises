@@ -1,6 +1,7 @@
 package com.windrises.system;
 
 import com.windrises.core.utils.MonitoringTools;
+import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -11,8 +12,17 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class SystemStartUp implements CommandLineRunner {
+
+
+    private final RocketMQTemplate rocketMQTemplate;
+
+    public SystemStartUp(RocketMQTemplate rocketMQTemplate) {
+        this.rocketMQTemplate = rocketMQTemplate;
+    }
+
     @Override
     public void run(String... args) throws Exception {
-        MonitoringTools.treeCache("/ramzes");
+        /*zk监听/ramzes  节点  */
+        //MonitoringTools.treeCache("/ramzes");
     }
 }
