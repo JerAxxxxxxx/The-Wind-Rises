@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="LOG_HOME" value="${catalina.base}/logs"/>
+    <property name="encoding" value="UTF-8"/>
+    <property name="normal-pattern"
+              value="%d{yyyy-MM-dd/HH:mm:ss.SSS}|%X{localIp}|%X{requestId}|%X{requestSeq}|^_^|[%t] %-5level %logger{50} %line - %m%n"/>
+    <property name="plain-pattern" value="%d{yyyy-MM-dd.HH:mm:ss} %msg%n"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>
+                %d{yyyy-MM-dd/HH:mm:ss.SSS}|%X{localIp}|%X{requestId}|%X{requestSeq}|^_^|[%t] %-5level %logger{50} %line
+                - %m%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!--不同业务逻辑的日志打印到不同文件-->
+    <appender name="bizLogAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_HOME}/biz.log</File>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/biz.log.%d</fileNamePattern>
+            <maxHistory>12</maxHistory>
+        </rollingPolicy>
+        <encoder charset="UTF-8">
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] %level [%thread] %file:%line - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- 使用时间戳作为文件名 -->
+    <timestamp key="bySecond" datePattern="yyyyMMdd"/>
+
+    <property name="pid" value="${PID:-}"/>
+
+    <!--<File>${LOG_HOME}/business-${pid}-${bySecond}-xuhao.log</File>-->
+    <!--business-data_sync-程序pid-日期（yyyyMMdd）-序号.log-->
+    <appender name="syncLogAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${LOG_HOME}/business-data_sync-${bySecond}.log</File>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--${path}.%i.%d{yyyyMMdd}-->
+            <fileNamePattern>${LOG_HOME}/sync.log.%d</fileNamePattern>
+            <maxHistory>12</maxHistory>
+            <!--<TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">-->
+                <!--<MaxFileSize>1MB</MaxFileSize>-->
+            <!--</TimeBasedFileNamingAndTriggeringPolicy>-->
+        </rollingPolicy>
+        <encoder charset="UTF-8">
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] %level [%thread] %file:%line - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- 不同的业务逻辑日志打印到指定文件夹-->
+    <logger name="bizLog" additivity="false" level="INFO">
+        <appender-ref ref="bizLogAppender"/>
+    </logger>
+    <logger name="syncLog" additivity="false" level="INFO">
+        <appender-ref ref="syncLogAppender"/>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
