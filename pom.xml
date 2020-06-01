@@ -8,6 +8,7 @@
         <module>windrises-system</module>
         <module>windrises-quartz</module>
         <module>windrises-logging</module>
+        <module>windrises-design-mode</module>
     </modules>
 
     <groupId>com.windrises</groupId>
