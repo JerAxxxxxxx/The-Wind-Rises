@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly
+        xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
+    <id>package</id>
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+
+    <dependencySets>
+
+        <dependencySet>
+            <useProjectArtifact>true</useProjectArtifact>
+            <outputDirectory>apps</outputDirectory>
+            <includes>
+                <include>com.windrises:*</include>
+            </includes>
+        </dependencySet>
+
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <outputDirectory>libs</outputDirectory>
+            <excludes>
+                <exclude>com.windrises:*</exclude>
+            </excludes>
+        </dependencySet>
+
+    </dependencySets>
+
+    <fileSets>
+        <fileSet>
+            <directory>libs</directory>
+            <outputDirectory>libs</outputDirectory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/scripts</directory>
+            <outputDirectory>bin</outputDirectory>
+            <fileMode>775</fileMode>
+            <includes>
+                <include>*.sh</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/resources</directory>
+            <outputDirectory>etc</outputDirectory>
+            <includes>
+                <include>*.*</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/resources/mapper</directory>
+            <outputDirectory>etc/mapper</outputDirectory>
+            <includes>
+                <include>*.xml</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>
+
