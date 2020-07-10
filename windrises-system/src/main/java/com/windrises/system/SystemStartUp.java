@@ -14,11 +14,11 @@ import org.springframework.stereotype.Component;
 public class SystemStartUp implements CommandLineRunner {
 
 
-    private final RocketMQTemplate rocketMQTemplate;
+    /*private final RocketMQTemplate rocketMQTemplate;
 
     public SystemStartUp(RocketMQTemplate rocketMQTemplate) {
         this.rocketMQTemplate = rocketMQTemplate;
-    }
+    }*/
 
     @Override
     public void run(String... args) throws Exception {
