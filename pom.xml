@@ -27,7 +27,7 @@
 
         <lombok.verison>1.18.12</lombok.verison>
         <hutool.version>5.2.0</hutool.version>
-        <fastjson.version>1.2.66</fastjson.version>
+        <fastjson.version>1.2.75</fastjson.version>
         <jasypt.version>3.0.2</jasypt.version>
 
         <mybatis-spring-boot-starter>2.1.1</mybatis-spring-boot-starter>

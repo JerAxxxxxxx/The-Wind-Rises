@@ -1,7 +1,6 @@
 package com.windrises.system.service.impl;
 
 import com.windrises.system.service.ITestUserService;
-import com.windrises.system.test.AsyncTest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -27,10 +26,9 @@ public class TestUserServiceImpl implements ITestUserService {
 
     private final TestUserMapper testUserMapper;
 
-    private final AsyncTest test;
 
-    public TestUserServiceImpl(AsyncTest test, TestUserMapper testUserMapper) {
-        this.test = test;
+    public TestUserServiceImpl(/*AsyncTest test,*/ TestUserMapper testUserMapper) {
+        //this.test = test;
         this.testUserMapper = testUserMapper;
     }
 
@@ -67,7 +65,7 @@ public class TestUserServiceImpl implements ITestUserService {
     @Override
     public List<TestUser> getAll() {
         //test();
-        test.test();
+        //test.test();
         String test = testUserMapper.getAll().stream()
                 .filter(testUser -> "123".equals(testUser.getRole()))
                 .map(TestUser::getRole)

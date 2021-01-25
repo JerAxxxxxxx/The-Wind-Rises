@@ -21,7 +21,7 @@ public class CuratorCurd<T> {
     /**
      * 设置重置策略       重试策略：初试时间为2s 重试10次
      */
-    private RetryPolicy retryPolicy = new ExponentialBackoffRetry(2000, 10);
+    private final RetryPolicy retryPolicy = new ExponentialBackoffRetry(2000, 10);
 
     /**
      * 设置连接的字符串
