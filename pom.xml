@@ -23,15 +23,15 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
+        <spring-boot.version>2.3.8.RELEASE</spring-boot.version>
 
-        <lombok.verison>1.18.12</lombok.verison>
-        <hutool.version>5.2.0</hutool.version>
+        <lombok.verison>1.18.16</lombok.verison>
+        <hutool.version>5.5.7</hutool.version>
         <fastjson.version>1.2.75</fastjson.version>
-        <jasypt.version>3.0.2</jasypt.version>
+        <jasypt.version>3.0.3</jasypt.version>
 
-        <mybatis-spring-boot-starter>2.1.1</mybatis-spring-boot-starter>
-        <mysql-connector.version>8.0.16</mysql-connector.version>
+        <mybatis-spring-boot-starter>2.1.4</mybatis-spring-boot-starter>
+        <mysql-connector.version>5.1.49</mysql-connector.version>
 
         <jedis.version>3.3.0</jedis.version>
 
@@ -69,6 +69,11 @@
                 </exclusions>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-jpa</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
 
             <!-- hutool工具类 -->
             <dependency>
