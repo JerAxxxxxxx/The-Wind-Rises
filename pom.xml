@@ -36,7 +36,7 @@
         <jedis.version>3.3.0</jedis.version>
 
         <curator.version>4.3.0</curator.version>
-        <xxl-job.version>2.2.0</xxl-job.version>
+        <xxl-job.version>2.3.0</xxl-job.version>
     </properties>
 
     <dependencyManagement>
