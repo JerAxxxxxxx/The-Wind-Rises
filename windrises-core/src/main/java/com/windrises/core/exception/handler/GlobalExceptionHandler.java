@@ -4,6 +4,7 @@ import com.windrises.core.entity.vo.Result;
 import com.windrises.core.exception.BaseException;
 import com.windrises.core.exception.ZkException;
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -31,7 +32,7 @@ import static com.windrises.core.exception.SystemErrorType.SYSTEM_BUSY;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(value = {BaseException.class})
-    public Result baseException(BaseException ex) {
+    public Result<Object> baseException(BaseException ex) {
         log.error("base exception:{}", ex.getMessage());
         return Result.fail(ex.getErrorType());
     }
@@ -62,7 +63,7 @@ public class GlobalExceptionHandler {
      * @return 返回报文附带参数校验失败列表
      */
     @ExceptionHandler(ConstraintViolationException.class)
-    public Result handleConstraintViolationException(ConstraintViolationException e) {
+    public Result<String>  handleConstraintViolationException(ConstraintViolationException e) {
         Set<ConstraintViolation<?>> constraintViolations = e.getConstraintViolations();
         String collect = constraintViolations.stream().map(ConstraintViolation::getMessage).collect(Collectors.joining(","));
         return Result.fail(collect);

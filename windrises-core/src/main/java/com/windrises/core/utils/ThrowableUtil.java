@@ -2,9 +2,10 @@ package com.windrises.core.utils;
 
 import com.windrises.core.exception.BadRequestException;
 
-import javax.validation.ConstraintViolationException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+
+import org.hibernate.exception.ConstraintViolationException;
 
 /**
  * 异常工具 2019-01-06
