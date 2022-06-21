@@ -31,7 +31,7 @@
         <jasypt.version>3.0.3</jasypt.version>
 
         <mybatis-spring-boot-starter>2.2.2</mybatis-spring-boot-starter>
-        <mysql-connector.version>8.0.16</mysql-connector.version>
+        <mysql-connector.version>8.0.28</mysql-connector.version>
 
         <jedis.version>4.1.1</jedis.version>
 
