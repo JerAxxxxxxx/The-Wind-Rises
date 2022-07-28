@@ -6,12 +6,14 @@ import cn.hutool.core.util.IdUtil;
 import cn.hutool.poi.excel.BigExcelWriter;
 import cn.hutool.poi.excel.ExcelUtil;
 import com.windrises.core.exception.BadRequestException;
+
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.activation.MimetypesFileTypeMap;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.nio.file.Files;
 import java.security.MessageDigest;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -119,7 +121,7 @@ public class FileUtil extends cn.hutool.core.io.FileUtil {
         if (file.exists()) {
             return file;
         }
-        OutputStream os = new FileOutputStream(file);
+        OutputStream os = Files.newOutputStream(file.toPath());
         int bytesRead;
         byte[] buffer = new byte[8192];
         while ((bytesRead = ins.read(buffer, 0, 8192)) != -1) {
