@@ -13,6 +13,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import javax.validation.ConstraintViolation;
@@ -31,6 +32,7 @@ import static com.windrises.core.exception.SystemErrorType.SYSTEM_BUSY;
  */
 @ControllerAdvice
 @Slf4j
+@ResponseBody
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(value = {BaseException.class})
