@@ -61,7 +61,7 @@ public class GlobalExceptionHandler {
      * <p>
      * 如不做此处理，spring框架一般是会直接返回 httpStatus 为 400(bad_request) 的响应
      *
-     * @param e
+     * @param e 异常
      * @return 返回报文附带参数校验失败列表
      */
     @ExceptionHandler(ConstraintViolationException.class)
