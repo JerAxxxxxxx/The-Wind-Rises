@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -69,9 +70,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<?> handleConstraintViolationException(ConstraintViolationException e) {
         Set<ConstraintViolation<?>> constraintViolations = e.getConstraintViolations();
-        String collect = constraintViolations.stream()
-                .map(ConstraintViolation::getMessage)
-                .collect(Collectors.joining(","));
+        String collect = constraintViolations.stream().map(ConstraintViolation::getMessage).collect(Collectors.joining(","));
         return new ResponseEntity<>(Result.fail(collect), HttpStatus.BAD_REQUEST);
     }
 
@@ -111,5 +110,11 @@ public class GlobalExceptionHandler {
             log.debug("请求参数校验不通过: " + collect, e);
         }
         return new ResponseEntity<>(Result.fail(collect), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
+    public ResponseEntity<?> methodNotAllowed(HttpRequestMethodNotSupportedException e) {
+        log.error("请求方式不允许", e);
+        return new ResponseEntity<>(Result.fail(e.getMessage()), HttpStatus.BAD_REQUEST);
     }
 }
