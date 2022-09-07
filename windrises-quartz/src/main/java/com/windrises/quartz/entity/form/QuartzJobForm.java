@@ -1,7 +1,9 @@
 package com.windrises.quartz.entity.form;
 
+import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.windrises.core.entity.form.BaseForm;
 import com.windrises.core.entity.po.QuartzJob;
 import lombok.Data;
@@ -64,4 +66,7 @@ public class QuartzJobForm extends BaseForm<QuartzJob> {
      * 备注
      */
     private String remark;
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date testDate;
 }
