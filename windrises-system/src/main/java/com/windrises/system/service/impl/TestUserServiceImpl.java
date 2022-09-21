@@ -28,7 +28,8 @@ public class TestUserServiceImpl implements ITestUserService {
 
     ThreadFactory springFactory = new CustomizableThreadFactory("spring-pool-");
 
-    ExecutorService exec = new ThreadPoolExecutor(8, 16, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(500), springFactory);
+    ExecutorService exec = new ThreadPoolExecutor(8, 16,
+            0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(500), springFactory);
 
     public TestUserServiceImpl(/*AsyncTest test,*/ TestUserMapper testUserMapper) {
         //this.test = test;
