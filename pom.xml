@@ -9,6 +9,7 @@
         <module>windrises-quartz</module>
         <module>windrises-logging</module>
         <module>windrises-design-mode</module>
+        <module>windrises-temp</module>
     </modules>
 
     <groupId>com.windrises</groupId>
@@ -23,7 +24,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring-boot.version>2.7.2</spring-boot.version>
+        <spring-boot.version>2.7.4</spring-boot.version>
 
         <lombok.verison>1.18.16</lombok.verison>
         <hutool.version>5.8.4</hutool.version>
