@@ -1,0 +1,1081 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.windrises.temp.mapper.UsersMapper">
+  <resultMap id="BaseResultMap" type="com.windrises.temp.entity.po.Users">
+    <!--@mbg.generated-->
+    <!--@Table jweb_users-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="firstname" jdbcType="VARCHAR" property="firstname" />
+    <result column="lastname" jdbcType="VARCHAR" property="lastname" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="lastvisit" jdbcType="TIMESTAMP" property="lastvisit" />
+    <result column="regdate" jdbcType="TIMESTAMP" property="regdate" />
+    <result column="gender" jdbcType="INTEGER" property="gender" />
+    <result column="idcard" jdbcType="VARCHAR" property="idcard" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="active" jdbcType="BOOLEAN" property="active" />
+    <result column="user_actkey" jdbcType="VARCHAR" property="userActkey" />
+    <result column="security_hash" jdbcType="VARCHAR" property="securityHash" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="birthdaycalendar" jdbcType="INTEGER" property="birthdaycalendar" />
+    <result column="birthday" jdbcType="TIMESTAMP" property="birthday" />
+    <result column="description" jdbcType="LONGVARCHAR" property="description" />
+    <result column="occupation" jdbcType="VARCHAR" property="occupation" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="department_id" jdbcType="BIGINT" property="departmentId" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
+    <result column="sequence" jdbcType="BIGINT" property="sequence" />
+    <result column="sequenceno" jdbcType="BIGINT" property="sequenceno" />
+    <result column="initials" jdbcType="VARCHAR" property="initials" />
+    <result column="activeid" jdbcType="INTEGER" property="activeid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="userspacesize" jdbcType="INTEGER" property="userspacesize" />
+    <result column="userspace_id" jdbcType="BIGINT" property="userspaceId" />
+    <result column="last_userspacesize" jdbcType="INTEGER" property="lastUserspacesize" />
+    <result column="last_userspace_id" jdbcType="BIGINT" property="lastUserspaceId" />
+    <result column="modifyinitialpassword" jdbcType="BOOLEAN" property="modifyinitialpassword" />
+    <result column="linkboxdesktopshortcutenabled" jdbcType="INTEGER" property="linkboxdesktopshortcutenabled" />
+    <result column="linkboxdesktopshortcutname" jdbcType="VARCHAR" property="linkboxdesktopshortcutname" />
+    <result column="second_department_id" jdbcType="VARCHAR" property="secondDepartmentId" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="paixu" jdbcType="VARCHAR" property="paixu" />
+    <result column="weixinopenid" jdbcType="VARCHAR" property="weixinopenid" />
+    <result column="maxuploadspeed" jdbcType="INTEGER" property="maxuploadspeed" />
+    <result column="maxdownloadspeed" jdbcType="INTEGER" property="maxdownloadspeed" />
+    <result column="dingtalkopenid" jdbcType="VARCHAR" property="dingtalkopenid" />
+    <result column="valid_forever" jdbcType="INTEGER" property="validForever" />
+    <result column="valid_end_time" jdbcType="TIMESTAMP" property="validEndTime" />
+    <result column="language" jdbcType="VARCHAR" property="language" />
+    <result column="update_password_time" jdbcType="TIMESTAMP" property="updatePasswordTime" />
+    <result column="syncdate" jdbcType="TIMESTAMP" property="syncdate" />
+    <result column="clubunreadfilenum" jdbcType="BIGINT" property="clubunreadfilenum" />
+    <result column="an_device_token" jdbcType="VARCHAR" property="anDeviceToken" />
+    <result column="ios_device_token" jdbcType="VARCHAR" property="iosDeviceToken" />
+    <result column="name_score" jdbcType="DOUBLE" property="nameScore" />
+    <result column="last_exchange" jdbcType="BIGINT" property="lastExchange" />
+    <result column="last_official_document" jdbcType="BIGINT" property="lastOfficialDocument" />
+    <result column="account_type" jdbcType="SMALLINT" property="accountType" />
+    <result column="synckey" jdbcType="VARCHAR" property="synckey" />
+    <result column="commfilesafemodesetup" jdbcType="LONGVARCHAR" property="commfilesafemodesetup" />
+    <result column="safemodesetupswitch" jdbcType="BIGINT" property="safemodesetupswitch" />
+    <result column="myfilesafemodesetup" jdbcType="BIGINT" property="myfilesafemodesetup" />
+    <result column="file_exchange_targetusername" jdbcType="VARCHAR" property="fileExchangeTargetusername" />
+    <result column="client_myfile_drive_enabled" jdbcType="INTEGER" property="clientMyfileDriveEnabled" />
+    <result column="client_club_drive_enabled" jdbcType="INTEGER" property="clientClubDriveEnabled" />
+    <result column="client_commonfile_drive_enabled" jdbcType="INTEGER" property="clientCommonfileDriveEnabled" />
+    <result column="auditors" jdbcType="BIGINT" property="auditors" />
+    <result column="previous_visit_time" jdbcType="TIMESTAMP" property="previousVisitTime" />
+    <result column="index_sync" jdbcType="VARCHAR" property="indexSync" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="weixin" jdbcType="VARCHAR" property="weixin" />
+    <result column="qq" jdbcType="VARCHAR" property="qq" />
+    <result column="dingtalk" jdbcType="VARCHAR" property="dingtalk" />
+    <result column="website" jdbcType="VARCHAR" property="website" />
+    <result column="addres" jdbcType="VARCHAR" property="addres" />
+    <result column="cifs_enabled" jdbcType="INTEGER" property="cifsEnabled" />
+    <result column="cifs_enabled_date" jdbcType="TIMESTAMP" property="cifsEnabledDate" />
+    <result column="commonfile_enabled" jdbcType="INTEGER" property="commonfileEnabled" />
+    <result column="commonfile_enabled_date" jdbcType="TIMESTAMP" property="commonfileEnabledDate" />
+    <result column="user_cifs_online" jdbcType="INTEGER" property="userCifsOnline" />
+    <result column="last_ip" jdbcType="VARCHAR" property="lastIp" />
+    <result column="last_client" jdbcType="VARCHAR" property="lastClient" />
+    <result column="last_os_name" jdbcType="VARCHAR" property="lastOsName" />
+    <result column="jigou" jdbcType="VARCHAR" property="jigou" />
+    <result column="wangdian" jdbcType="VARCHAR" property="wangdian" />
+    <result column="isoutsourcing" jdbcType="INTEGER" property="isoutsourcing" />
+    <result column="last_sync_time" jdbcType="BIGINT" property="lastSyncTime" />
+    <result column="last_sync_time_up" jdbcType="BIGINT" property="lastSyncTimeUp" />
+    <result column="parent_name" jdbcType="VARCHAR" property="parentName" />
+    <result column="dingtalk_userid" jdbcType="VARCHAR" property="dingtalkUserid" />
+    <result column="is_outlink_auditor" jdbcType="INTEGER" property="isOutlinkAuditor" />
+    <result column="is_defult_auditor" jdbcType="INTEGER" property="isDefultAuditor" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, username, firstname, lastname, `password`, lastvisit, regdate, gender, idcard, 
+    age, active, user_actkey, security_hash, update_time, birthdaycalendar, birthday, 
+    description, occupation, `status`, department_id, role_id, `sequence`, sequenceno, 
+    initials, activeid, `name`, userspacesize, userspace_id, last_userspacesize, last_userspace_id, 
+    modifyinitialpassword, linkboxdesktopshortcutenabled, linkboxdesktopshortcutname, 
+    second_department_id, code, paixu, weixinopenid, maxuploadspeed, maxdownloadspeed, 
+    dingtalkopenid, valid_forever, valid_end_time, `language`, update_password_time, 
+    syncdate, clubunreadfilenum, an_device_token, ios_device_token, name_score, last_exchange, 
+    last_official_document, account_type, synckey, commfilesafemodesetup, safemodesetupswitch, 
+    myfilesafemodesetup, file_exchange_targetusername, client_myfile_drive_enabled, client_club_drive_enabled, 
+    client_commonfile_drive_enabled, auditors, previous_visit_time, index_sync, email, 
+    phone, telephone, weixin, qq, dingtalk, website, addres, cifs_enabled, cifs_enabled_date, 
+    commonfile_enabled, commonfile_enabled_date, user_cifs_online, last_ip, last_client, 
+    last_os_name, jigou, wangdian, isoutsourcing, last_sync_time, last_sync_time_up, 
+    parent_name, dingtalk_userid, is_outlink_auditor, is_defult_auditor
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from jweb_users
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from jweb_users
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.windrises.temp.entity.po.Users" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into jweb_users (username, firstname, lastname, 
+      `password`, lastvisit, regdate, 
+      gender, idcard, age, 
+      active, user_actkey, security_hash, 
+      update_time, birthdaycalendar, birthday, 
+      description, occupation, `status`, 
+      department_id, role_id, `sequence`, 
+      sequenceno, initials, activeid, 
+      `name`, userspacesize, userspace_id, 
+      last_userspacesize, last_userspace_id, modifyinitialpassword, 
+      linkboxdesktopshortcutenabled, linkboxdesktopshortcutname, 
+      second_department_id, code, paixu, 
+      weixinopenid, maxuploadspeed, maxdownloadspeed, 
+      dingtalkopenid, valid_forever, valid_end_time, 
+      `language`, update_password_time, syncdate, 
+      clubunreadfilenum, an_device_token, ios_device_token, 
+      name_score, last_exchange, last_official_document, 
+      account_type, synckey, commfilesafemodesetup, 
+      safemodesetupswitch, myfilesafemodesetup, 
+      file_exchange_targetusername, client_myfile_drive_enabled, 
+      client_club_drive_enabled, client_commonfile_drive_enabled, 
+      auditors, previous_visit_time, index_sync, 
+      email, phone, telephone, 
+      weixin, qq, dingtalk, 
+      website, addres, cifs_enabled, 
+      cifs_enabled_date, commonfile_enabled, commonfile_enabled_date, 
+      user_cifs_online, last_ip, last_client, 
+      last_os_name, jigou, wangdian, 
+      isoutsourcing, last_sync_time, last_sync_time_up, 
+      parent_name, dingtalk_userid, is_outlink_auditor, 
+      is_defult_auditor)
+    values (#{username,jdbcType=VARCHAR}, #{firstname,jdbcType=VARCHAR}, #{lastname,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{lastvisit,jdbcType=TIMESTAMP}, #{regdate,jdbcType=TIMESTAMP}, 
+      #{gender,jdbcType=INTEGER}, #{idcard,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, 
+      #{active,jdbcType=BOOLEAN}, #{userActkey,jdbcType=VARCHAR}, #{securityHash,jdbcType=VARCHAR}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{birthdaycalendar,jdbcType=INTEGER}, #{birthday,jdbcType=TIMESTAMP}, 
+      #{description,jdbcType=LONGVARCHAR}, #{occupation,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{departmentId,jdbcType=BIGINT}, #{roleId,jdbcType=BIGINT}, #{sequence,jdbcType=BIGINT}, 
+      #{sequenceno,jdbcType=BIGINT}, #{initials,jdbcType=VARCHAR}, #{activeid,jdbcType=INTEGER}, 
+      #{name,jdbcType=VARCHAR}, #{userspacesize,jdbcType=INTEGER}, #{userspaceId,jdbcType=BIGINT}, 
+      #{lastUserspacesize,jdbcType=INTEGER}, #{lastUserspaceId,jdbcType=BIGINT}, #{modifyinitialpassword,jdbcType=BOOLEAN}, 
+      #{linkboxdesktopshortcutenabled,jdbcType=INTEGER}, #{linkboxdesktopshortcutname,jdbcType=VARCHAR}, 
+      #{secondDepartmentId,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, #{paixu,jdbcType=VARCHAR}, 
+      #{weixinopenid,jdbcType=VARCHAR}, #{maxuploadspeed,jdbcType=INTEGER}, #{maxdownloadspeed,jdbcType=INTEGER}, 
+      #{dingtalkopenid,jdbcType=VARCHAR}, #{validForever,jdbcType=INTEGER}, #{validEndTime,jdbcType=TIMESTAMP}, 
+      #{language,jdbcType=VARCHAR}, #{updatePasswordTime,jdbcType=TIMESTAMP}, #{syncdate,jdbcType=TIMESTAMP}, 
+      #{clubunreadfilenum,jdbcType=BIGINT}, #{anDeviceToken,jdbcType=VARCHAR}, #{iosDeviceToken,jdbcType=VARCHAR}, 
+      #{nameScore,jdbcType=DOUBLE}, #{lastExchange,jdbcType=BIGINT}, #{lastOfficialDocument,jdbcType=BIGINT}, 
+      #{accountType,jdbcType=SMALLINT}, #{synckey,jdbcType=VARCHAR}, #{commfilesafemodesetup,jdbcType=LONGVARCHAR}, 
+      #{safemodesetupswitch,jdbcType=BIGINT}, #{myfilesafemodesetup,jdbcType=BIGINT}, 
+      #{fileExchangeTargetusername,jdbcType=VARCHAR}, #{clientMyfileDriveEnabled,jdbcType=INTEGER}, 
+      #{clientClubDriveEnabled,jdbcType=INTEGER}, #{clientCommonfileDriveEnabled,jdbcType=INTEGER}, 
+      #{auditors,jdbcType=BIGINT}, #{previousVisitTime,jdbcType=TIMESTAMP}, #{indexSync,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, 
+      #{weixin,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR}, #{dingtalk,jdbcType=VARCHAR}, 
+      #{website,jdbcType=VARCHAR}, #{addres,jdbcType=VARCHAR}, #{cifsEnabled,jdbcType=INTEGER}, 
+      #{cifsEnabledDate,jdbcType=TIMESTAMP}, #{commonfileEnabled,jdbcType=INTEGER}, #{commonfileEnabledDate,jdbcType=TIMESTAMP}, 
+      #{userCifsOnline,jdbcType=INTEGER}, #{lastIp,jdbcType=VARCHAR}, #{lastClient,jdbcType=VARCHAR}, 
+      #{lastOsName,jdbcType=VARCHAR}, #{jigou,jdbcType=VARCHAR}, #{wangdian,jdbcType=VARCHAR}, 
+      #{isoutsourcing,jdbcType=INTEGER}, #{lastSyncTime,jdbcType=BIGINT}, #{lastSyncTimeUp,jdbcType=BIGINT}, 
+      #{parentName,jdbcType=VARCHAR}, #{dingtalkUserid,jdbcType=VARCHAR}, #{isOutlinkAuditor,jdbcType=INTEGER}, 
+      #{isDefultAuditor,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.windrises.temp.entity.po.Users" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into jweb_users
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="username != null">
+        username,
+      </if>
+      <if test="firstname != null">
+        firstname,
+      </if>
+      <if test="lastname != null">
+        lastname,
+      </if>
+      <if test="password != null">
+        `password`,
+      </if>
+      <if test="lastvisit != null">
+        lastvisit,
+      </if>
+      <if test="regdate != null">
+        regdate,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="idcard != null">
+        idcard,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="active != null">
+        active,
+      </if>
+      <if test="userActkey != null">
+        user_actkey,
+      </if>
+      <if test="securityHash != null">
+        security_hash,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="birthdaycalendar != null">
+        birthdaycalendar,
+      </if>
+      <if test="birthday != null">
+        birthday,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="occupation != null">
+        occupation,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="departmentId != null">
+        department_id,
+      </if>
+      <if test="roleId != null">
+        role_id,
+      </if>
+      <if test="sequence != null">
+        `sequence`,
+      </if>
+      <if test="sequenceno != null">
+        sequenceno,
+      </if>
+      <if test="initials != null">
+        initials,
+      </if>
+      <if test="activeid != null">
+        activeid,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="userspacesize != null">
+        userspacesize,
+      </if>
+      <if test="userspaceId != null">
+        userspace_id,
+      </if>
+      <if test="lastUserspacesize != null">
+        last_userspacesize,
+      </if>
+      <if test="lastUserspaceId != null">
+        last_userspace_id,
+      </if>
+      <if test="modifyinitialpassword != null">
+        modifyinitialpassword,
+      </if>
+      <if test="linkboxdesktopshortcutenabled != null">
+        linkboxdesktopshortcutenabled,
+      </if>
+      <if test="linkboxdesktopshortcutname != null">
+        linkboxdesktopshortcutname,
+      </if>
+      <if test="secondDepartmentId != null">
+        second_department_id,
+      </if>
+      <if test="code != null">
+        code,
+      </if>
+      <if test="paixu != null">
+        paixu,
+      </if>
+      <if test="weixinopenid != null">
+        weixinopenid,
+      </if>
+      <if test="maxuploadspeed != null">
+        maxuploadspeed,
+      </if>
+      <if test="maxdownloadspeed != null">
+        maxdownloadspeed,
+      </if>
+      <if test="dingtalkopenid != null">
+        dingtalkopenid,
+      </if>
+      <if test="validForever != null">
+        valid_forever,
+      </if>
+      <if test="validEndTime != null">
+        valid_end_time,
+      </if>
+      <if test="language != null">
+        `language`,
+      </if>
+      <if test="updatePasswordTime != null">
+        update_password_time,
+      </if>
+      <if test="syncdate != null">
+        syncdate,
+      </if>
+      <if test="clubunreadfilenum != null">
+        clubunreadfilenum,
+      </if>
+      <if test="anDeviceToken != null">
+        an_device_token,
+      </if>
+      <if test="iosDeviceToken != null">
+        ios_device_token,
+      </if>
+      <if test="nameScore != null">
+        name_score,
+      </if>
+      <if test="lastExchange != null">
+        last_exchange,
+      </if>
+      <if test="lastOfficialDocument != null">
+        last_official_document,
+      </if>
+      <if test="accountType != null">
+        account_type,
+      </if>
+      <if test="synckey != null">
+        synckey,
+      </if>
+      <if test="commfilesafemodesetup != null">
+        commfilesafemodesetup,
+      </if>
+      <if test="safemodesetupswitch != null">
+        safemodesetupswitch,
+      </if>
+      <if test="myfilesafemodesetup != null">
+        myfilesafemodesetup,
+      </if>
+      <if test="fileExchangeTargetusername != null">
+        file_exchange_targetusername,
+      </if>
+      <if test="clientMyfileDriveEnabled != null">
+        client_myfile_drive_enabled,
+      </if>
+      <if test="clientClubDriveEnabled != null">
+        client_club_drive_enabled,
+      </if>
+      <if test="clientCommonfileDriveEnabled != null">
+        client_commonfile_drive_enabled,
+      </if>
+      <if test="auditors != null">
+        auditors,
+      </if>
+      <if test="previousVisitTime != null">
+        previous_visit_time,
+      </if>
+      <if test="indexSync != null">
+        index_sync,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="telephone != null">
+        telephone,
+      </if>
+      <if test="weixin != null">
+        weixin,
+      </if>
+      <if test="qq != null">
+        qq,
+      </if>
+      <if test="dingtalk != null">
+        dingtalk,
+      </if>
+      <if test="website != null">
+        website,
+      </if>
+      <if test="addres != null">
+        addres,
+      </if>
+      <if test="cifsEnabled != null">
+        cifs_enabled,
+      </if>
+      <if test="cifsEnabledDate != null">
+        cifs_enabled_date,
+      </if>
+      <if test="commonfileEnabled != null">
+        commonfile_enabled,
+      </if>
+      <if test="commonfileEnabledDate != null">
+        commonfile_enabled_date,
+      </if>
+      <if test="userCifsOnline != null">
+        user_cifs_online,
+      </if>
+      <if test="lastIp != null">
+        last_ip,
+      </if>
+      <if test="lastClient != null">
+        last_client,
+      </if>
+      <if test="lastOsName != null">
+        last_os_name,
+      </if>
+      <if test="jigou != null">
+        jigou,
+      </if>
+      <if test="wangdian != null">
+        wangdian,
+      </if>
+      <if test="isoutsourcing != null">
+        isoutsourcing,
+      </if>
+      <if test="lastSyncTime != null">
+        last_sync_time,
+      </if>
+      <if test="lastSyncTimeUp != null">
+        last_sync_time_up,
+      </if>
+      <if test="parentName != null">
+        parent_name,
+      </if>
+      <if test="dingtalkUserid != null">
+        dingtalk_userid,
+      </if>
+      <if test="isOutlinkAuditor != null">
+        is_outlink_auditor,
+      </if>
+      <if test="isDefultAuditor != null">
+        is_defult_auditor,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="firstname != null">
+        #{firstname,jdbcType=VARCHAR},
+      </if>
+      <if test="lastname != null">
+        #{lastname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="lastvisit != null">
+        #{lastvisit,jdbcType=TIMESTAMP},
+      </if>
+      <if test="regdate != null">
+        #{regdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=INTEGER},
+      </if>
+      <if test="idcard != null">
+        #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="active != null">
+        #{active,jdbcType=BOOLEAN},
+      </if>
+      <if test="userActkey != null">
+        #{userActkey,jdbcType=VARCHAR},
+      </if>
+      <if test="securityHash != null">
+        #{securityHash,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="birthdaycalendar != null">
+        #{birthdaycalendar,jdbcType=INTEGER},
+      </if>
+      <if test="birthday != null">
+        #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="occupation != null">
+        #{occupation,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="departmentId != null">
+        #{departmentId,jdbcType=BIGINT},
+      </if>
+      <if test="roleId != null">
+        #{roleId,jdbcType=BIGINT},
+      </if>
+      <if test="sequence != null">
+        #{sequence,jdbcType=BIGINT},
+      </if>
+      <if test="sequenceno != null">
+        #{sequenceno,jdbcType=BIGINT},
+      </if>
+      <if test="initials != null">
+        #{initials,jdbcType=VARCHAR},
+      </if>
+      <if test="activeid != null">
+        #{activeid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="userspacesize != null">
+        #{userspacesize,jdbcType=INTEGER},
+      </if>
+      <if test="userspaceId != null">
+        #{userspaceId,jdbcType=BIGINT},
+      </if>
+      <if test="lastUserspacesize != null">
+        #{lastUserspacesize,jdbcType=INTEGER},
+      </if>
+      <if test="lastUserspaceId != null">
+        #{lastUserspaceId,jdbcType=BIGINT},
+      </if>
+      <if test="modifyinitialpassword != null">
+        #{modifyinitialpassword,jdbcType=BOOLEAN},
+      </if>
+      <if test="linkboxdesktopshortcutenabled != null">
+        #{linkboxdesktopshortcutenabled,jdbcType=INTEGER},
+      </if>
+      <if test="linkboxdesktopshortcutname != null">
+        #{linkboxdesktopshortcutname,jdbcType=VARCHAR},
+      </if>
+      <if test="secondDepartmentId != null">
+        #{secondDepartmentId,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="paixu != null">
+        #{paixu,jdbcType=VARCHAR},
+      </if>
+      <if test="weixinopenid != null">
+        #{weixinopenid,jdbcType=VARCHAR},
+      </if>
+      <if test="maxuploadspeed != null">
+        #{maxuploadspeed,jdbcType=INTEGER},
+      </if>
+      <if test="maxdownloadspeed != null">
+        #{maxdownloadspeed,jdbcType=INTEGER},
+      </if>
+      <if test="dingtalkopenid != null">
+        #{dingtalkopenid,jdbcType=VARCHAR},
+      </if>
+      <if test="validForever != null">
+        #{validForever,jdbcType=INTEGER},
+      </if>
+      <if test="validEndTime != null">
+        #{validEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="language != null">
+        #{language,jdbcType=VARCHAR},
+      </if>
+      <if test="updatePasswordTime != null">
+        #{updatePasswordTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="syncdate != null">
+        #{syncdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="clubunreadfilenum != null">
+        #{clubunreadfilenum,jdbcType=BIGINT},
+      </if>
+      <if test="anDeviceToken != null">
+        #{anDeviceToken,jdbcType=VARCHAR},
+      </if>
+      <if test="iosDeviceToken != null">
+        #{iosDeviceToken,jdbcType=VARCHAR},
+      </if>
+      <if test="nameScore != null">
+        #{nameScore,jdbcType=DOUBLE},
+      </if>
+      <if test="lastExchange != null">
+        #{lastExchange,jdbcType=BIGINT},
+      </if>
+      <if test="lastOfficialDocument != null">
+        #{lastOfficialDocument,jdbcType=BIGINT},
+      </if>
+      <if test="accountType != null">
+        #{accountType,jdbcType=SMALLINT},
+      </if>
+      <if test="synckey != null">
+        #{synckey,jdbcType=VARCHAR},
+      </if>
+      <if test="commfilesafemodesetup != null">
+        #{commfilesafemodesetup,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="safemodesetupswitch != null">
+        #{safemodesetupswitch,jdbcType=BIGINT},
+      </if>
+      <if test="myfilesafemodesetup != null">
+        #{myfilesafemodesetup,jdbcType=BIGINT},
+      </if>
+      <if test="fileExchangeTargetusername != null">
+        #{fileExchangeTargetusername,jdbcType=VARCHAR},
+      </if>
+      <if test="clientMyfileDriveEnabled != null">
+        #{clientMyfileDriveEnabled,jdbcType=INTEGER},
+      </if>
+      <if test="clientClubDriveEnabled != null">
+        #{clientClubDriveEnabled,jdbcType=INTEGER},
+      </if>
+      <if test="clientCommonfileDriveEnabled != null">
+        #{clientCommonfileDriveEnabled,jdbcType=INTEGER},
+      </if>
+      <if test="auditors != null">
+        #{auditors,jdbcType=BIGINT},
+      </if>
+      <if test="previousVisitTime != null">
+        #{previousVisitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="indexSync != null">
+        #{indexSync,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="weixin != null">
+        #{weixin,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null">
+        #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="dingtalk != null">
+        #{dingtalk,jdbcType=VARCHAR},
+      </if>
+      <if test="website != null">
+        #{website,jdbcType=VARCHAR},
+      </if>
+      <if test="addres != null">
+        #{addres,jdbcType=VARCHAR},
+      </if>
+      <if test="cifsEnabled != null">
+        #{cifsEnabled,jdbcType=INTEGER},
+      </if>
+      <if test="cifsEnabledDate != null">
+        #{cifsEnabledDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="commonfileEnabled != null">
+        #{commonfileEnabled,jdbcType=INTEGER},
+      </if>
+      <if test="commonfileEnabledDate != null">
+        #{commonfileEnabledDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userCifsOnline != null">
+        #{userCifsOnline,jdbcType=INTEGER},
+      </if>
+      <if test="lastIp != null">
+        #{lastIp,jdbcType=VARCHAR},
+      </if>
+      <if test="lastClient != null">
+        #{lastClient,jdbcType=VARCHAR},
+      </if>
+      <if test="lastOsName != null">
+        #{lastOsName,jdbcType=VARCHAR},
+      </if>
+      <if test="jigou != null">
+        #{jigou,jdbcType=VARCHAR},
+      </if>
+      <if test="wangdian != null">
+        #{wangdian,jdbcType=VARCHAR},
+      </if>
+      <if test="isoutsourcing != null">
+        #{isoutsourcing,jdbcType=INTEGER},
+      </if>
+      <if test="lastSyncTime != null">
+        #{lastSyncTime,jdbcType=BIGINT},
+      </if>
+      <if test="lastSyncTimeUp != null">
+        #{lastSyncTimeUp,jdbcType=BIGINT},
+      </if>
+      <if test="parentName != null">
+        #{parentName,jdbcType=VARCHAR},
+      </if>
+      <if test="dingtalkUserid != null">
+        #{dingtalkUserid,jdbcType=VARCHAR},
+      </if>
+      <if test="isOutlinkAuditor != null">
+        #{isOutlinkAuditor,jdbcType=INTEGER},
+      </if>
+      <if test="isDefultAuditor != null">
+        #{isDefultAuditor,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.windrises.temp.entity.po.Users">
+    <!--@mbg.generated-->
+    update jweb_users
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="firstname != null">
+        firstname = #{firstname,jdbcType=VARCHAR},
+      </if>
+      <if test="lastname != null">
+        lastname = #{lastname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        `password` = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="lastvisit != null">
+        lastvisit = #{lastvisit,jdbcType=TIMESTAMP},
+      </if>
+      <if test="regdate != null">
+        regdate = #{regdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=INTEGER},
+      </if>
+      <if test="idcard != null">
+        idcard = #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="active != null">
+        active = #{active,jdbcType=BOOLEAN},
+      </if>
+      <if test="userActkey != null">
+        user_actkey = #{userActkey,jdbcType=VARCHAR},
+      </if>
+      <if test="securityHash != null">
+        security_hash = #{securityHash,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="birthdaycalendar != null">
+        birthdaycalendar = #{birthdaycalendar,jdbcType=INTEGER},
+      </if>
+      <if test="birthday != null">
+        birthday = #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="occupation != null">
+        occupation = #{occupation,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="departmentId != null">
+        department_id = #{departmentId,jdbcType=BIGINT},
+      </if>
+      <if test="roleId != null">
+        role_id = #{roleId,jdbcType=BIGINT},
+      </if>
+      <if test="sequence != null">
+        `sequence` = #{sequence,jdbcType=BIGINT},
+      </if>
+      <if test="sequenceno != null">
+        sequenceno = #{sequenceno,jdbcType=BIGINT},
+      </if>
+      <if test="initials != null">
+        initials = #{initials,jdbcType=VARCHAR},
+      </if>
+      <if test="activeid != null">
+        activeid = #{activeid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="userspacesize != null">
+        userspacesize = #{userspacesize,jdbcType=INTEGER},
+      </if>
+      <if test="userspaceId != null">
+        userspace_id = #{userspaceId,jdbcType=BIGINT},
+      </if>
+      <if test="lastUserspacesize != null">
+        last_userspacesize = #{lastUserspacesize,jdbcType=INTEGER},
+      </if>
+      <if test="lastUserspaceId != null">
+        last_userspace_id = #{lastUserspaceId,jdbcType=BIGINT},
+      </if>
+      <if test="modifyinitialpassword != null">
+        modifyinitialpassword = #{modifyinitialpassword,jdbcType=BOOLEAN},
+      </if>
+      <if test="linkboxdesktopshortcutenabled != null">
+        linkboxdesktopshortcutenabled = #{linkboxdesktopshortcutenabled,jdbcType=INTEGER},
+      </if>
+      <if test="linkboxdesktopshortcutname != null">
+        linkboxdesktopshortcutname = #{linkboxdesktopshortcutname,jdbcType=VARCHAR},
+      </if>
+      <if test="secondDepartmentId != null">
+        second_department_id = #{secondDepartmentId,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="paixu != null">
+        paixu = #{paixu,jdbcType=VARCHAR},
+      </if>
+      <if test="weixinopenid != null">
+        weixinopenid = #{weixinopenid,jdbcType=VARCHAR},
+      </if>
+      <if test="maxuploadspeed != null">
+        maxuploadspeed = #{maxuploadspeed,jdbcType=INTEGER},
+      </if>
+      <if test="maxdownloadspeed != null">
+        maxdownloadspeed = #{maxdownloadspeed,jdbcType=INTEGER},
+      </if>
+      <if test="dingtalkopenid != null">
+        dingtalkopenid = #{dingtalkopenid,jdbcType=VARCHAR},
+      </if>
+      <if test="validForever != null">
+        valid_forever = #{validForever,jdbcType=INTEGER},
+      </if>
+      <if test="validEndTime != null">
+        valid_end_time = #{validEndTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="language != null">
+        `language` = #{language,jdbcType=VARCHAR},
+      </if>
+      <if test="updatePasswordTime != null">
+        update_password_time = #{updatePasswordTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="syncdate != null">
+        syncdate = #{syncdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="clubunreadfilenum != null">
+        clubunreadfilenum = #{clubunreadfilenum,jdbcType=BIGINT},
+      </if>
+      <if test="anDeviceToken != null">
+        an_device_token = #{anDeviceToken,jdbcType=VARCHAR},
+      </if>
+      <if test="iosDeviceToken != null">
+        ios_device_token = #{iosDeviceToken,jdbcType=VARCHAR},
+      </if>
+      <if test="nameScore != null">
+        name_score = #{nameScore,jdbcType=DOUBLE},
+      </if>
+      <if test="lastExchange != null">
+        last_exchange = #{lastExchange,jdbcType=BIGINT},
+      </if>
+      <if test="lastOfficialDocument != null">
+        last_official_document = #{lastOfficialDocument,jdbcType=BIGINT},
+      </if>
+      <if test="accountType != null">
+        account_type = #{accountType,jdbcType=SMALLINT},
+      </if>
+      <if test="synckey != null">
+        synckey = #{synckey,jdbcType=VARCHAR},
+      </if>
+      <if test="commfilesafemodesetup != null">
+        commfilesafemodesetup = #{commfilesafemodesetup,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="safemodesetupswitch != null">
+        safemodesetupswitch = #{safemodesetupswitch,jdbcType=BIGINT},
+      </if>
+      <if test="myfilesafemodesetup != null">
+        myfilesafemodesetup = #{myfilesafemodesetup,jdbcType=BIGINT},
+      </if>
+      <if test="fileExchangeTargetusername != null">
+        file_exchange_targetusername = #{fileExchangeTargetusername,jdbcType=VARCHAR},
+      </if>
+      <if test="clientMyfileDriveEnabled != null">
+        client_myfile_drive_enabled = #{clientMyfileDriveEnabled,jdbcType=INTEGER},
+      </if>
+      <if test="clientClubDriveEnabled != null">
+        client_club_drive_enabled = #{clientClubDriveEnabled,jdbcType=INTEGER},
+      </if>
+      <if test="clientCommonfileDriveEnabled != null">
+        client_commonfile_drive_enabled = #{clientCommonfileDriveEnabled,jdbcType=INTEGER},
+      </if>
+      <if test="auditors != null">
+        auditors = #{auditors,jdbcType=BIGINT},
+      </if>
+      <if test="previousVisitTime != null">
+        previous_visit_time = #{previousVisitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="indexSync != null">
+        index_sync = #{indexSync,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        telephone = #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="weixin != null">
+        weixin = #{weixin,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null">
+        qq = #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="dingtalk != null">
+        dingtalk = #{dingtalk,jdbcType=VARCHAR},
+      </if>
+      <if test="website != null">
+        website = #{website,jdbcType=VARCHAR},
+      </if>
+      <if test="addres != null">
+        addres = #{addres,jdbcType=VARCHAR},
+      </if>
+      <if test="cifsEnabled != null">
+        cifs_enabled = #{cifsEnabled,jdbcType=INTEGER},
+      </if>
+      <if test="cifsEnabledDate != null">
+        cifs_enabled_date = #{cifsEnabledDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="commonfileEnabled != null">
+        commonfile_enabled = #{commonfileEnabled,jdbcType=INTEGER},
+      </if>
+      <if test="commonfileEnabledDate != null">
+        commonfile_enabled_date = #{commonfileEnabledDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="userCifsOnline != null">
+        user_cifs_online = #{userCifsOnline,jdbcType=INTEGER},
+      </if>
+      <if test="lastIp != null">
+        last_ip = #{lastIp,jdbcType=VARCHAR},
+      </if>
+      <if test="lastClient != null">
+        last_client = #{lastClient,jdbcType=VARCHAR},
+      </if>
+      <if test="lastOsName != null">
+        last_os_name = #{lastOsName,jdbcType=VARCHAR},
+      </if>
+      <if test="jigou != null">
+        jigou = #{jigou,jdbcType=VARCHAR},
+      </if>
+      <if test="wangdian != null">
+        wangdian = #{wangdian,jdbcType=VARCHAR},
+      </if>
+      <if test="isoutsourcing != null">
+        isoutsourcing = #{isoutsourcing,jdbcType=INTEGER},
+      </if>
+      <if test="lastSyncTime != null">
+        last_sync_time = #{lastSyncTime,jdbcType=BIGINT},
+      </if>
+      <if test="lastSyncTimeUp != null">
+        last_sync_time_up = #{lastSyncTimeUp,jdbcType=BIGINT},
+      </if>
+      <if test="parentName != null">
+        parent_name = #{parentName,jdbcType=VARCHAR},
+      </if>
+      <if test="dingtalkUserid != null">
+        dingtalk_userid = #{dingtalkUserid,jdbcType=VARCHAR},
+      </if>
+      <if test="isOutlinkAuditor != null">
+        is_outlink_auditor = #{isOutlinkAuditor,jdbcType=INTEGER},
+      </if>
+      <if test="isDefultAuditor != null">
+        is_defult_auditor = #{isDefultAuditor,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.windrises.temp.entity.po.Users">
+    <!--@mbg.generated-->
+    update jweb_users
+    set username = #{username,jdbcType=VARCHAR},
+      firstname = #{firstname,jdbcType=VARCHAR},
+      lastname = #{lastname,jdbcType=VARCHAR},
+      `password` = #{password,jdbcType=VARCHAR},
+      lastvisit = #{lastvisit,jdbcType=TIMESTAMP},
+      regdate = #{regdate,jdbcType=TIMESTAMP},
+      gender = #{gender,jdbcType=INTEGER},
+      idcard = #{idcard,jdbcType=VARCHAR},
+      age = #{age,jdbcType=INTEGER},
+      active = #{active,jdbcType=BOOLEAN},
+      user_actkey = #{userActkey,jdbcType=VARCHAR},
+      security_hash = #{securityHash,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      birthdaycalendar = #{birthdaycalendar,jdbcType=INTEGER},
+      birthday = #{birthday,jdbcType=TIMESTAMP},
+      description = #{description,jdbcType=LONGVARCHAR},
+      occupation = #{occupation,jdbcType=VARCHAR},
+      `status` = #{status,jdbcType=INTEGER},
+      department_id = #{departmentId,jdbcType=BIGINT},
+      role_id = #{roleId,jdbcType=BIGINT},
+      `sequence` = #{sequence,jdbcType=BIGINT},
+      sequenceno = #{sequenceno,jdbcType=BIGINT},
+      initials = #{initials,jdbcType=VARCHAR},
+      activeid = #{activeid,jdbcType=INTEGER},
+      `name` = #{name,jdbcType=VARCHAR},
+      userspacesize = #{userspacesize,jdbcType=INTEGER},
+      userspace_id = #{userspaceId,jdbcType=BIGINT},
+      last_userspacesize = #{lastUserspacesize,jdbcType=INTEGER},
+      last_userspace_id = #{lastUserspaceId,jdbcType=BIGINT},
+      modifyinitialpassword = #{modifyinitialpassword,jdbcType=BOOLEAN},
+      linkboxdesktopshortcutenabled = #{linkboxdesktopshortcutenabled,jdbcType=INTEGER},
+      linkboxdesktopshortcutname = #{linkboxdesktopshortcutname,jdbcType=VARCHAR},
+      second_department_id = #{secondDepartmentId,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      paixu = #{paixu,jdbcType=VARCHAR},
+      weixinopenid = #{weixinopenid,jdbcType=VARCHAR},
+      maxuploadspeed = #{maxuploadspeed,jdbcType=INTEGER},
+      maxdownloadspeed = #{maxdownloadspeed,jdbcType=INTEGER},
+      dingtalkopenid = #{dingtalkopenid,jdbcType=VARCHAR},
+      valid_forever = #{validForever,jdbcType=INTEGER},
+      valid_end_time = #{validEndTime,jdbcType=TIMESTAMP},
+      `language` = #{language,jdbcType=VARCHAR},
+      update_password_time = #{updatePasswordTime,jdbcType=TIMESTAMP},
+      syncdate = #{syncdate,jdbcType=TIMESTAMP},
+      clubunreadfilenum = #{clubunreadfilenum,jdbcType=BIGINT},
+      an_device_token = #{anDeviceToken,jdbcType=VARCHAR},
+      ios_device_token = #{iosDeviceToken,jdbcType=VARCHAR},
+      name_score = #{nameScore,jdbcType=DOUBLE},
+      last_exchange = #{lastExchange,jdbcType=BIGINT},
+      last_official_document = #{lastOfficialDocument,jdbcType=BIGINT},
+      account_type = #{accountType,jdbcType=SMALLINT},
+      synckey = #{synckey,jdbcType=VARCHAR},
+      commfilesafemodesetup = #{commfilesafemodesetup,jdbcType=LONGVARCHAR},
+      safemodesetupswitch = #{safemodesetupswitch,jdbcType=BIGINT},
+      myfilesafemodesetup = #{myfilesafemodesetup,jdbcType=BIGINT},
+      file_exchange_targetusername = #{fileExchangeTargetusername,jdbcType=VARCHAR},
+      client_myfile_drive_enabled = #{clientMyfileDriveEnabled,jdbcType=INTEGER},
+      client_club_drive_enabled = #{clientClubDriveEnabled,jdbcType=INTEGER},
+      client_commonfile_drive_enabled = #{clientCommonfileDriveEnabled,jdbcType=INTEGER},
+      auditors = #{auditors,jdbcType=BIGINT},
+      previous_visit_time = #{previousVisitTime,jdbcType=TIMESTAMP},
+      index_sync = #{indexSync,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      telephone = #{telephone,jdbcType=VARCHAR},
+      weixin = #{weixin,jdbcType=VARCHAR},
+      qq = #{qq,jdbcType=VARCHAR},
+      dingtalk = #{dingtalk,jdbcType=VARCHAR},
+      website = #{website,jdbcType=VARCHAR},
+      addres = #{addres,jdbcType=VARCHAR},
+      cifs_enabled = #{cifsEnabled,jdbcType=INTEGER},
+      cifs_enabled_date = #{cifsEnabledDate,jdbcType=TIMESTAMP},
+      commonfile_enabled = #{commonfileEnabled,jdbcType=INTEGER},
+      commonfile_enabled_date = #{commonfileEnabledDate,jdbcType=TIMESTAMP},
+      user_cifs_online = #{userCifsOnline,jdbcType=INTEGER},
+      last_ip = #{lastIp,jdbcType=VARCHAR},
+      last_client = #{lastClient,jdbcType=VARCHAR},
+      last_os_name = #{lastOsName,jdbcType=VARCHAR},
+      jigou = #{jigou,jdbcType=VARCHAR},
+      wangdian = #{wangdian,jdbcType=VARCHAR},
+      isoutsourcing = #{isoutsourcing,jdbcType=INTEGER},
+      last_sync_time = #{lastSyncTime,jdbcType=BIGINT},
+      last_sync_time_up = #{lastSyncTimeUp,jdbcType=BIGINT},
+      parent_name = #{parentName,jdbcType=VARCHAR},
+      dingtalk_userid = #{dingtalkUserid,jdbcType=VARCHAR},
+      is_outlink_auditor = #{isOutlinkAuditor,jdbcType=INTEGER},
+      is_defult_auditor = #{isDefultAuditor,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
