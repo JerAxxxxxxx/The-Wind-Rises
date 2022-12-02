@@ -24,19 +24,19 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring-boot.version>2.7.4</spring-boot.version>
+        <spring-boot.version>2.7.6</spring-boot.version>
 
         <lombok.verison>1.18.16</lombok.verison>
-        <hutool.version>5.8.4</hutool.version>
+        <hutool.version>5.8.10</hutool.version>
         <fastjson.version>1.2.83</fastjson.version>
         <jasypt.version>3.0.4</jasypt.version>
 
         <mybatis-spring-boot-starter>2.2.2</mybatis-spring-boot-starter>
         <mysql-connector.version>8.0.28</mysql-connector.version>
 
-        <jedis.version>4.2.3</jedis.version>
+        <jedis.version>4.3.1</jedis.version>
 
-        <curator.version>5.2.0</curator.version>
+        <curator.version>5.4.0</curator.version>
         <xxl-job.version>2.3.1</xxl-job.version>
     </properties>
 
