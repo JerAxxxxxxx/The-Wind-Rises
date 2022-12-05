@@ -1,9 +1,14 @@
 package com.windrises.core.exception.handler;
 
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+
 import com.windrises.core.entity.vo.Result;
 import com.windrises.core.exception.BaseException;
 import com.windrises.core.exception.ZkException;
-import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,12 +22,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
-import javax.xml.ws.Response;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
+import lombok.extern.slf4j.Slf4j;
 
 import static com.windrises.core.exception.SystemErrorType.SYSTEM_BUSY;
 

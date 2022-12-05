@@ -1,7 +1,5 @@
 package com.windrises.system;
 
-import com.windrises.core.utils.MonitoringTools;
-import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

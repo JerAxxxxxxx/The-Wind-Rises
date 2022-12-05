@@ -24,8 +24,12 @@ import java.util.List;
 @RequestMapping("/quartzJob")
 public class QuartzJobController {
 
+    private final IQuartzJobService quartzJobService;
+
     @Autowired
-    private IQuartzJobService quartzJobService;
+    public QuartzJobController(IQuartzJobService quartzJobService) {
+        this.quartzJobService = quartzJobService;
+    }
 
     @PostMapping("/insert")
     public Result insert(@Valid @RequestBody QuartzJobForm quartzJobForm) {

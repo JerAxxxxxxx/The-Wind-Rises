@@ -1,12 +1,5 @@
 package com.windrises.system.service.impl;
 
-import com.windrises.system.service.ITestUserService;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.scheduling.concurrent.CustomizableThreadFactory;
-import org.springframework.stereotype.Service;
-import com.windrises.core.mapper.TestUserMapper;
-import com.windrises.core.entity.po.TestUser;
-
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -14,6 +7,20 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
+
+import com.windrises.core.entity.po.TestUser;
+import com.windrises.core.mapper.TestUserMapper;
+import com.windrises.system.event.TestOneEvent;
+import com.windrises.system.service.ITestUserService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.event.EventPublishingRunListener;
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.event.EventListener;
+import org.springframework.scheduling.concurrent.CustomizableThreadFactory;
+import org.springframework.stereotype.Service;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author JerAxxxxx
@@ -31,9 +38,13 @@ public class TestUserServiceImpl implements ITestUserService {
     ExecutorService exec = new ThreadPoolExecutor(8, 16,
             0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(500), springFactory);
 
-    public TestUserServiceImpl(/*AsyncTest test,*/ TestUserMapper testUserMapper) {
+    private final ApplicationEventPublisher publisher;
+
+    public TestUserServiceImpl(/*AsyncTest test,*/ TestUserMapper testUserMapper,
+                                                   ApplicationEventPublisher publisher) {
         //this.test = test;
         this.testUserMapper = testUserMapper;
+        this.publisher = publisher;
     }
 
     @Override
@@ -68,8 +79,6 @@ public class TestUserServiceImpl implements ITestUserService {
 
     @Override
     public List<TestUser> getAll() {
-        //test();
-        //test.test();
         String test = testUserMapper.getAll().stream()
                 .filter(testUser -> "123".equals(testUser.getRole()))
                 .map(TestUser::getRole)
@@ -78,6 +87,16 @@ public class TestUserServiceImpl implements ITestUserService {
                 .reduce((a, b) -> a + "???" + b)
                 .orElse("无数据");
         log.info(test);
+        TestOneEvent testOneEvent = new TestOneEvent(this);
+        testOneEvent.setMessage("111");
+        publisher.publishEvent(testOneEvent);
         return testUserMapper.getAll();
+    }
+
+
+    @EventListener(value = TestOneEvent.class)
+    public void testListener(TestOneEvent testOneEvent) {
+        String message = testOneEvent.getMessage();
+        log.info(message);
     }
 }
