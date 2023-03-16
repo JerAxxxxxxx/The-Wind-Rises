@@ -9,7 +9,7 @@ function get_kubectl_log() {
     if [ -z "$task_pid" ]; then
       echo "找不到 $1 进程!"
     else
-      docker logs -f --tail ${BASE_LOG_LINE} "${task_pid}"
+      kubectl logs -f --tail ${BASE_LOG_LINE} -n linkapp "${task_pid}"
     fi
   fi
 }
