@@ -9,10 +9,12 @@ function get_kubectl_log() {
     if [ -z "$task_pid" ]; then
       echo "找不到 $1 进程!"
     else
+      kubectl logs -f --tail ${BASE_LOG_LINE} -n linkapp "${task_pid}"
       # 过滤掉相关类的日志打印
-      kubectl logs -f --tail ${BASE_LOG_LINE} -n linkapp "${task_pid}" | grep -v "MQClientFactoryScheduledThread"
+      # kubectl logs -f --tail ${BASE_LOG_LINE} -n linkapp "${task_pid}" | grep -v "MQClientFactoryScheduledThread"
     fi
   fi
 }
 
+clear
 get_kubectl_log "$1"
